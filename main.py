@@ -1,4 +1,11 @@
+import os
+import sys
 from pathlib import Path
+
+# 检查必需的环境变量（在 Vercel 中必须配置）
+if not os.getenv("DEEPSEEK_API_KEY"):
+    print("警告: DEEPSEEK_API_KEY 未设置。请在 Vercel 环境变量中配置。", file=sys.stderr)
+    # 不立即退出，让应用启动，但会在后续初始化时失败
 
 from vanna import Agent, AgentConfig
 from vanna.servers.fastapi import VannaFastAPIServer
