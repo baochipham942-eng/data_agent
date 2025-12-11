@@ -15,9 +15,21 @@ sys.path.insert(0, str(PROJECT_ROOT))
 try:
     from main import app
     
-    # Vercel Python runtime 需要直接导出 FastAPI 应用
-    # 注意：Vercel 的 @vercel/python 应该自动处理 FastAPI ASGI 应用
-    handler = app
+    # Vercel 的 Python runtime 期望 WSGI 应用，但 FastAPI 是 ASGI
+    # 尝试使用 asgiref 将 ASGI 转换为 WSGI
+    try:
+        from asgiref.wsgi import WsgiToAsgi
+        # 将 ASGI 应用包装为 WSGI 兼容格式
+        handler = WsgiToAsgi(app)
+    except (ImportError, AttributeError):
+        # 如果转换失败，尝试直接导出（可能不工作）
+        # 或者使用 mangum（如果可用）
+        try:
+            from mangum import Mangum
+            handler = Mangum(app, lifespan="off")
+        except ImportError:
+            # 最后尝试直接导出
+            handler = app
         
 except Exception as e:
     # 如果导入失败，创建一个友好的错误应用
