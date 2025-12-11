@@ -15,8 +15,14 @@ sys.path.insert(0, str(PROJECT_ROOT))
 try:
     from main import app
     
-    # Vercel 需要这个 handler
-    handler = app
+    # 使用 mangum 适配器将 FastAPI (ASGI) 转换为 Vercel 兼容的格式
+    try:
+        from mangum import Mangum
+        handler = Mangum(app, lifespan="off")
+    except ImportError:
+        # 如果 mangum 不可用，直接使用 app（可能不兼容）
+        handler = app
+        
 except Exception as e:
     # 如果导入失败，创建一个友好的错误应用
     from fastapi import FastAPI
