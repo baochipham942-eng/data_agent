@@ -1,5 +1,6 @@
 """
 Vercel Serverless Function 入口点
+Updated: Trigger redeployment
 """
 import sys
 import os
