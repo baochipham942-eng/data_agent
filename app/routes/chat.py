@@ -1552,8 +1552,8 @@ def create_chat_router() -> APIRouter:
                                                 /表\\s*[名]?\\s*[为是]/.test(textTrimmed) ||
                                                 /字段\\s*[名为]/.test(textTrimmed) ||
                                                 /列\\s*[名为]/.test(textTrimmed) ||
-                                                /包含\s*\d+\s*[行列]/.test(textTrimmed) ||
-                                                /结构\s*[如下]/.test(textTrimmed)
+                                                /包含\\s*\\d+\\s*[行列]/.test(textTrimmed) ||
+                                                /结构\\s*[如下]/.test(textTrimmed)
                                             ));
                                         
                                         if (!shouldExclude) {
@@ -1828,8 +1828,8 @@ def create_chat_router() -> APIRouter:
             const filteredText = filteredLines.join('\\n');
             
             const patterns = [
-                /(?:步骤|Step)\s*(\d+)[:：]\s*(.*?)(?=(?:步骤|Step)\s*\d+|$)/gi,
-                /(\d+)\.\s+(.+?)(?=\d+\.|$)/g,
+                /(?:步骤|Step)\\s*(\\d+)[:：]\\s*(.*?)(?=(?:步骤|Step)\\s*\\d+|$)/gi,
+                /(\\d+)\\.\\s+(.+?)(?=\\d+\\.|$)/g,
             ];
             
             for (const pattern of patterns) {
