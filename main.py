@@ -152,6 +152,13 @@ if FRONTEND_DIR.exists():
     # 挂载静态资源 - 注意路径与 vite.config.ts 的 base 设置一致
     app.mount("/app/assets", StaticFiles(directory=FRONTEND_DIR / "assets"), name="frontend_assets")
     
+    # 根路径重定向到 /app
+    @app.get("/")
+    async def root():
+        """根路径重定向到前端应用"""
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url="/app")
+    
     # 新的前端入口点 - /app 路径
     @app.get("/app")
     @app.get("/app/")

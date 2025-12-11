@@ -1,0 +1,15 @@
+# FastAPI 和相关依赖
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Vanna AI 相关
+vanna>=0.5.0
+
+# SQLite 支持（Python 内置，但列出以确保）
+# sqlite3 是 Python 标准库的一部分
+
+# 其他依赖
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
