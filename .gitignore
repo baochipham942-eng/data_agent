@@ -1,0 +1,21 @@
+# Python caches
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Environments
+venv/
+envs/
+
+# Local secrets
+.env
+
+# Generated data
+outputs/
+logs/*.db
+vanna_data/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+

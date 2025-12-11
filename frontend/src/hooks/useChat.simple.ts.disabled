@@ -1,0 +1,188 @@
+import { useState, useCallback, useRef } from 'react';
+import type { Message, Conversation } from '../types';
+import { 
+  sendChatMessage, 
+  fetchConversation,
+  extractSQLFromText,
+} from '../utils/api';
+import { v4 as uuidv4 } from 'uuid';
+
+/**
+ * 简化版的 useChat hook - 只保留核心功能
+ * 移除了复杂的推理步骤、SQL提取逻辑等
+ */
+export function useChat() {
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
+
+  const addUserMessage = useCallback((content: string) => {
+    const message: Message = {
+      id: uuidv4(),
+      role: 'user',
+      content,
+      timestamp: new Date(),
+    };
+    setMessages(prev => [...prev, message]);
+    return message;
+  }, []);
+
+  const sendMessage = useCallback(async (content: string, userInfo?: { userId?: string; userNickname?: string }) => {
+    if (!content.trim() || isLoading) return;
+
+    setIsLoading(true);
+    addUserMessage(content);
+
+    const assistantMsgId = uuidv4();
+    const assistantMessage: Message = {
+      id: assistantMsgId,
+      role: 'assistant',
+      content: '',
+      timestamp: new Date(),
+      isStreaming: true,
+    };
+    setMessages(prev => [...prev, assistantMessage]);
+
+    const history = messages.map(msg => ({
+      role: msg.role,
+      content: msg.content,
+    }));
+
+    let fullText = '';
+    let sql: string | undefined;
+
+    try {
+      await sendChatMessage(
+        content,
+        currentConversationId,
+        history,
+        {
+          onText: (text) => {
+            fullText += text + ' ';
+            setMessages(prev =>
+              prev.map(msg =>
+                msg.id === assistantMsgId
+                  ? { ...msg, content: fullText.trim() }
+                  : msg
+              )
+            );
+          },
+          onSSE: (data) => {
+            // 更新 conversation_id
+            if ((data as any).conversation_id) {
+              const newConvId = (data as any).conversation_id as string;
+              if (!currentConversationId) {
+                setCurrentConversationId(newConvId);
+              }
+            }
+            
+            // 尝试提取 SQL
+            const sseStr = JSON.stringify(data);
+            if (sseStr.includes('SELECT') && !sql) {
+              // 简单的 SQL 提取
+              const sqlMatch = sseStr.match(/(SELECT[\s\S]{10,}?(?:FROM|WHERE|GROUP|ORDER|LIMIT)[\s\S]*?)(?:;|"|'|$|\n)/i);
+              if (sqlMatch) {
+                sql = sqlMatch[1].trim();
+              }
+            }
+          },
+          onComplete: async (response) => {
+            let finalContent = fullText.trim() || response?.trim() || '';
+            
+            // 如果没有 SQL，尝试从文本中提取
+            if (!sql && finalContent) {
+              sql = extractSQLFromText(finalContent) || undefined;
+            }
+            
+            setMessages(prev =>
+              prev.map(msg =>
+                msg.id === assistantMsgId
+                  ? {
+                      ...msg,
+                      content: finalContent,
+                      sql,
+                      isStreaming: false,
+                    }
+                  : msg
+              )
+            );
+            setIsLoading(false);
+          },
+          onError: (error) => {
+            console.error('Stream error:', error);
+            setMessages(prev =>
+              prev.map(msg =>
+                msg.id === assistantMsgId
+                  ? {
+                      ...msg,
+                      content: '抱歉，发生了错误，请重试。',
+                      isStreaming: false,
+                    }
+                  : msg
+              )
+            );
+            setIsLoading(false);
+          },
+        },
+        userInfo,
+      );
+    } catch (error) {
+      console.error('Send message error:', error);
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === assistantMsgId
+            ? {
+                ...msg,
+                content: '发送消息失败，请检查网络连接后重试。',
+                isStreaming: false,
+              }
+            : msg
+        )
+      );
+      setIsLoading(false);
+    }
+  }, [messages, isLoading, currentConversationId, addUserMessage]);
+
+  const loadConversation = useCallback(async (conv: Conversation) => {
+    try {
+      const data = await fetchConversation(conv.id);
+      setCurrentConversationId(conv.id);
+      
+      const loadedMessages: Message[] = data.messages.map((msg: any) => {
+        let sql = msg.sql;
+        if (!sql && msg.content) {
+          sql = extractSQLFromText(msg.content) || undefined;
+        }
+        
+        return {
+          id: uuidv4(),
+          role: msg.role,
+          content: msg.content || '',
+          timestamp: new Date(msg.created_at || Date.now()),
+          sql,
+          isStreaming: false,
+        };
+      });
+      
+      setMessages(loadedMessages);
+    } catch (error) {
+      console.error('Load conversation error:', error);
+    }
+  }, []);
+
+  const startNewChat = useCallback(() => {
+    setMessages([]);
+    setCurrentConversationId(null);
+  }, []);
+
+  return {
+    messages,
+    isLoading,
+    currentConversationId,
+    sendMessage,
+    loadConversation,
+    startNewChat,
+    stopGeneration: () => setIsLoading(false),
+  };
+}
+

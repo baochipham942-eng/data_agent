@@ -1,0 +1,32 @@
+.quick-actions {
+  margin-top: 12px;
+  padding: 12px 0;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.quick-actions .ant-btn {
+  font-size: 12px;
+  height: 28px;
+  padding: 0 12px;
+}
+
+.quick-actions .ant-btn:hover {
+  border-color: var(--color-accent, #1890ff);
+  color: var(--color-accent, #1890ff);
+}
+
+/* 暗色主题适配 */
+@media (prefers-color-scheme: dark) {
+  .quick-actions {
+    border-top-color: #444;
+  }
+}
+
+
+
+
+
+
+
+
+

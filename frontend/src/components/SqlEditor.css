@@ -1,0 +1,93 @@
+.sql-editor-content {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.sql-editor-loading,
+.sql-editor-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text-muted);
+}
+
+.editor-card {
+  margin-bottom: 12px;
+  background: var(--color-surface) !important;
+  border-color: var(--color-surface-border) !important;
+}
+
+.editor-card .ant-card-head {
+  min-height: 36px;
+  padding: 0 12px;
+  background: var(--color-surface-elevated);
+  border-color: var(--color-surface-border) !important;
+}
+
+.editor-card .ant-card-head-title {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.editor-card .ant-card-body {
+  padding: 12px;
+}
+
+.aggregation-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.aggregation-item .field-name {
+  flex: 1;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 12px;
+  color: var(--color-accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.condition-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 4px 8px 4px 0;
+}
+
+.preview-card .ant-card-body {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.sql-preview {
+  margin: 0;
+  padding: 12px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* 高亮 SQL 关键字 */
+.sql-preview-keyword {
+  color: #ff7b72;
+  font-weight: 600;
+}
+
+.sql-preview-string {
+  color: #a5d6ff;
+}
+
+.sql-preview-number {
+  color: #79c0ff;
+}
+

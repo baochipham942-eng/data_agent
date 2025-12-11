@@ -1,0 +1,240 @@
+.database-page {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+}
+
+.database-page.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.database-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.database-page .page-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.database-page .stats-row {
+  margin-bottom: 24px;
+}
+
+.database-page .stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-lg);
+}
+
+.database-page .stat-card .ant-statistic-title {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.database-page .stat-card .ant-statistic-content {
+  color: var(--color-text-primary);
+}
+
+.database-page .stat-card .ant-statistic-content-prefix {
+  color: var(--color-primary);
+  margin-right: 8px;
+}
+
+.database-page .tables-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-lg);
+}
+
+.database-page .tables-card .ant-card-head {
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.database-page .tables-card .ant-card-head-title {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.database-page .table-name {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.database-page .column-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.database-page .column-tag {
+  font-size: 11px;
+  padding: 0 6px;
+  margin: 0;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-surface-border);
+  color: var(--color-text-secondary);
+}
+
+.database-page .column-tag.more {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* 表格样式 */
+.database-page .ant-table {
+  background: transparent;
+}
+
+.database-page .ant-table-thead > tr > th {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.database-page .ant-table-tbody > tr > td {
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.database-page .ant-table-tbody > tr:hover > td {
+  background: var(--color-surface-elevated);
+}
+
+/* 预览弹窗 */
+.preview-modal .ant-modal-content {
+  background: var(--color-surface);
+}
+
+.preview-modal .ant-modal-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.preview-modal .ant-modal-title {
+  color: var(--color-text-primary);
+}
+
+.preview-modal .preview-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.preview-modal .null-value {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.preview-modal .ant-table-thead > tr > th {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.preview-modal .ant-table-tbody > tr > td {
+  color: var(--color-text-primary);
+  font-size: 13px;
+}
+
+/* 重命名表单 */
+.rename-form {
+  padding: 8px 0;
+}
+
+.rename-form p {
+  margin-bottom: 16px;
+  color: var(--color-text-secondary);
+}
+
+.rename-form p strong {
+  color: var(--color-text-primary);
+}
+
+/* 按钮样式 */
+.database-page .ant-btn-text {
+  color: var(--color-text-secondary);
+}
+
+.database-page .ant-btn-text:hover {
+  color: var(--color-primary);
+  background: var(--color-surface-elevated);
+}
+
+/* 分页 */
+.database-page .ant-pagination-item {
+  background: var(--color-surface);
+  border-color: var(--color-surface-border);
+}
+
+.database-page .ant-pagination-item a {
+  color: var(--color-text-primary);
+}
+
+.database-page .ant-pagination-item-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.database-page .ant-pagination-item-active a {
+  color: white;
+}
+
+/* Dropdown 菜单 */
+.ant-dropdown-menu {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+}
+
+.ant-dropdown-menu-item {
+  color: var(--color-text-primary);
+}
+
+.ant-dropdown-menu-item:hover {
+  background: var(--color-surface-elevated);
+}
+
+.ant-dropdown-menu-item-danger {
+  color: var(--color-error) !important;
+}
+
+/* 确认弹窗 */
+.ant-modal-confirm .ant-modal-content {
+  background: var(--color-surface);
+}
+
+.ant-modal-confirm-title {
+  color: var(--color-text-primary) !important;
+}
+
+.ant-modal-confirm-content {
+  color: var(--color-text-secondary) !important;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+page_name,name,feature,page_first_category,page_second_category
+msgList,消息列表页,,,
+app_login_launch,我的 - 登录 - video 登录页面,,,
+benefit_list,我的权益列表,,,
+home_recommend,推荐首页,-,发现,推荐
+app_login_email_code,邮箱验证码页面,,,
+app_login_method,手机号/邮箱登录页面,,,
+AShome,精选首页,-,精选,精选
+home_community,社区首页,-,发现,社区
+community_myPage_UserHomepage,个人主页,,,
+app_login_mobile_code,手机号验证码页面,,,
+productList,商品列表,-,精选,精选商品
+microPage,微页面,Event & Campaign (incl. Micro page),购车,微页面
+me,我的首页,-,我的,我的
+referral_home,推荐计划,Referral,购车,共行致远
+referral_new_referral,共行致远,Referral,购车,共行致远
+rsa_detailpage,道路援助,,,
+rsa_createorder,道路援助的订单申请页面,,,
+rsa_history,道路援助订单列表页面（我的预约）,,,
+PCC_registerInformation,会员注册页面STEP1,,,
+PCC_registerPayment,会员注册页面STEP3,,,
+iccChooseModel,ICC选择车型,ICC,购车,ICC
+iccPriceDetail,ICC完成定制,ICC,购车,ICC
+testDriveReport,试驾报告,-,我的,我的预约
+iccMyConfig,ICC我的定制保时捷,ICC,购车,ICC
+testDriveDetail,试驾详情,-,我的,我的预约
+confirmOrder,精品确认订单,-,精选,精品订单
+productDetail,商品详情页,-,精选,精选商品
+ASsearch,商品搜索,-,精选,精选商品
+systemProxy,中转页,-,其他,中转页
+home_event,活动首页,-,发现,活动
+ompOrderDetail,精选订单详情,-,精选,精选订单
+orderList,精选订单,-,精选,精选订单
+productOrderList,我的商品订单,-,精选,精选订单
+modelPageHome,车型首页,Model page,车型,车型
+valet_orderinfo,取送车订单详情页,,,
+vehicle,购车首页,-,购车,购车
+newCarDetail,新车车辆详情,New car page,购车,车辆详情
+externalWeb,广告页,-,其他,广告页
+dynamicDetails,动态详情页,,,
+PCC_registerResearch,会员注册页面STEP2,,,
+iccHome,ICC首页,ICC,购车,ICC
+event_calendar_list,活动日历,-,发现,活动
+aftersale,精选售后,-,精选,售后
+afterSaleDetail,售后详情,-,精选,售后
+usedCarDetail,易手车车辆详情,Pre-owned car page,购车,车辆详情
+community_topicPage_detail,话题详情页,,,
+mob_createorder,代步车订单创建页面,,,
+referral_recommendationDetails,推荐记录详情,Referral,购车,共行致远
+referral_eventDetails,立即参与,Referral,购车,共行致远
+valet_createorder,取送车创建订单,,,
+newsDetail,资讯详情,-,发现,资讯
+valet_list,取送车订单列表,,,
+referral_giftConfirmation,礼品确认页,Referral,购车,共行致远
+dealerDetail_newVersion,经销商详情,Dealer page,购车,经销商详情

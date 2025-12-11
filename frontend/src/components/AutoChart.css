@@ -1,0 +1,87 @@
+.auto-chart-container {
+  margin-top: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-normal);
+}
+
+.auto-chart-container.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1000px;
+  z-index: 1000;
+  background: var(--color-bg-secondary);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.chart-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-toolbar .ant-segmented {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.chart-toolbar .ant-segmented-item {
+  color: var(--color-text-muted);
+}
+
+.chart-toolbar .ant-segmented-item-selected {
+  background: var(--color-accent) !important;
+  color: white;
+}
+
+.chart-toolbar .ant-btn-text {
+  color: var(--color-text-muted);
+}
+
+.chart-toolbar .ant-btn-text:hover {
+  color: var(--color-accent);
+  background: rgba(88, 166, 255, 0.1);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-right .copied {
+  color: var(--color-success) !important;
+}
+
+/* SQL 代码块样式 */
+.sql-code-container {
+  overflow: auto;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+.sql-code {
+  margin: 0;
+  padding: 16px 20px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Menlo', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #e6edf3;
+  white-space: pre-wrap;
+  word-break: break-word;
+  letter-spacing: 0.3px;
+}
+
+/* SQL 语法高亮基础色 */
+.sql-code {
+  background: transparent;
+}
+

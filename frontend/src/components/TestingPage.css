@@ -1,0 +1,25 @@
+.testing-page {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.testing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.testing-header h2 {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+

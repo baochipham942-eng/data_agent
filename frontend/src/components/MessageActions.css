@@ -1,0 +1,82 @@
+.message-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.actions-left {
+  display: flex;
+  gap: 4px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  font-size: 14px;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-primary);
+}
+
+.action-btn.active.like {
+  color: var(--color-success);
+  background: rgba(63, 185, 80, 0.15);
+}
+
+.action-btn.active.dislike {
+  color: var(--color-error);
+  background: rgba(248, 81, 73, 0.15);
+}
+
+.action-btn.active.copy {
+  color: var(--color-accent);
+  background: rgba(88, 166, 255, 0.15);
+}
+
+/* 会话ID按钮 */
+.session-id-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  letter-spacing: 0.3px;
+}
+
+.session-id-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+/* 联系专家按钮 */
+.action-btn.contact-expert {
+  color: var(--color-text-muted);
+}
+
+.action-btn.contact-expert:hover {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+}
+

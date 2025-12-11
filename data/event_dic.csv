@@ -1,0 +1,182 @@
+event_key,comment
+$visit,访问
+mpa_click_content_switcher_charging_overview,车辆-功能-充电-概览点击量
+mpa_click_my_message_center_entry_me,”我的 - 消息中心“入口点击量
+mpa_screen_view_service_home,服务-页面浏览量
+omp_api_error,MPA API 异常事件
+omp_page_browse,页面访问
+mpa_click_home_charging_h5_login,H5 App免登录
+mpa_click_vehicle_carousel_header_button,车辆-详细信息点击量
+mpa_click_vehicle_tab_vehicle_image,车辆-车图点击量
+mpa_happiness_index_reset,快乐指数重置
+mpa_screen_view_content_switcher_charging_overview,Android-车辆-详细信息-功能-充电-页面浏览量
+mpa_screen_view_map_home,地图首页浏览量
+mpa_screen_view_vehicle_overview,车辆-详细信息-概览-页面浏览量
+omp_common_page_actions,通用页面操作
+mpa_happiness_index_increase,快乐指数增加
+mpa_screen_view_vehicle_screen,MPA-车辆-页面浏览量
+omp_common_module_show,通用模块曝光
+omp_page_duration,小程序页面停留时长
+mpa_screen_view_message_center_list,我的-消息中心页面浏览量
+$mp_on_share,小程序分享事件
+$mp_share_timeline,小程序分享到朋友圈
+$page,页面访问
+cnid_auth_log,[CNID]Auth 日志上报
+mpa_click_actionsheet_remote_unlock,车辆-锁止与解锁车辆-解锁点击量
+mpa_click_bottom_navigation_mine,首页菜单栏 - 我的tab点击
+mpa_click_bottom_navigation_service,首页菜单栏 - 服务tab点击
+mpa_click_bottom_navigation_vehicle,首页菜单栏 - 车辆tab点击
+mpa_click_button_vehicle_chassis_error,Android_车辆-车辆状态异常点击量
+mpa_click_button_vehicle_chassis_ok,Android_车辆-车辆状态正常点击量
+mpa_click_cell_item_vehicle_overview_vin,车辆-概览-车辆识别号码（VIN）点击量
+mpa_click_charging_banner,首页充电卡片点击事件
+mpa_click_charging_dialog_cancel_charging_cancel,取消充电弹窗 - 二次确认取消充电点击量
+mpa_click_charging_filter_entry,filter点击
+mpa_click_charging_map_station_card,“地图-充电卡片”点击量
+mpa_click_charging_orders_entry_order_category,我的订单-订单分类页-点击充电订单入口
+mpa_click_charging_payment,立即支付点击量
+mpa_click_charging_price,“电站详情 -充电价格”点击量
+mpa_click_charging_redetect_connector,“已插枪，重新检测”点击量
+mpa_click_charging_reservation_double_confirm_cancel,“ 预约成功 - 二次确认取消预约”点击量
+mpa_click_charging_station_connector_list,电站详情 -枪列表点击量
+mpa_click_charging_station_find,车辆-寻找充电站点击量
+mpa_click_charging_station_list_item,“电站列表 - 电站” 点击量
+mpa_click_charging_step_stop_charging,手动结束充电点击量
+mpa_click_content_switcher_location_alarms,车辆-功能-警报-位置点击量
+mpa_click_content_switcher_vehicle_functions,车辆-车信息详情页-功能点击量
+mpa_click_content_switcher_vehicle_overview,车辆-车信息详情页-概览点击量
+mpa_click_edit_profile_entry_me,“我的 - 修改信息”入口点击量
+mpa_click_editable_address_entry,MPA-地址管理入口 - 在个人资料入口
+mpa_click_editable_address_manage,地址管理 - 管理按钮点击量
+mpa_click_highlighted_menu_item_my_appointments_entry_me,我的预约-点击入口
+mpa_click_highlighted_menu_item_my_orders_entry_me,我的订单-点击入口
+mpa_click_login_me,我的 - 登陆按钮点击量
+mpa_click_login_tc_agree,服务协议弹窗 - 同意并继续点击量
+mpa_click_map_bottomsheet_charging,iOS-地图-充电点击量
+mpa_click_map_bottomsheet_connect,iOS-地图-找车点击量
+mpa_click_map_bottomsheet_favorites,IOS-地图-收藏点击量
+mpa_click_map_button_charingStation_routePlanning,地图-找车-目的地详情页-充电站卡片-路径规划点击量
+mpa_click_map_button_cn_charge,Android_地图-充电点击量
+mpa_click_map_button_msp_selector_favorite,Android_地图-收藏点击量
+mpa_click_map_button_vehicle,Android-地图-找车点击量
+mpa_click_map_explore_default_view_locate_button,地图-定位点击量
+mpa_click_map_search_bar_on_map,地图-搜索目的地点击量
+mpa_click_map_search_bar_on_map_charging,地图-充电-搜索目的地点击量
+mpa_click_map_search_bar_on_map_connect,地图-找车-搜索目的地点击量
+mpa_click_map_search_history_list_item,地图-搜索-搜索历史点击量
+mpa_click_me_livechat,我的 - 在线客服入口点击量
+mpa_click_message_center_access_control,“我的 - 消息中心” - 开启通知功能点击量
+mpa_click_message_center_detail,“我的 - 消息中心” - 查看消息详情点击量
+mpa_click_my_appointment_sab_detail_entry,“我的 - 我的预约” - 服务预约详情入口点击量
+mpa_click_my_appointment_sab_tab,“我的 - 我的预约” - 服务预约tab入口点击量
+mpa_click_my_card_and_coupon_entry_me,我的卡券-入口点击
+mpa_click_my_order_maintenance_history_tab,“我的 - 我的订单” - 保养历史tab点击量
+mpa_click_my_profile_entry_me,[App/Profile] 个人资料页入口点击量
+mpa_click_page_route_setting_route_setting,地图-路径规划-路径设置点击量
+mpa_click_page_route_setting_transit_point_add,地图-路径规划-添加经停点点击
+mpa_click_sab_details_edit,“我的 - 我的预约” - 修改预约功能使用量
+mpa_click_sab_details_reschedule,“我的 - 我的预约” - 重新预约功能使用量
+mpa_click_sab_form_my_sab,我的服务预约 - SAB表单入口点击量
+mpa_click_sab_form_submission,服务预约 - 提交按钮点击量
+mpa_click_settings_access,“我的 - 设置” - 权限管理入口点击量
+mpa_click_settings_dark_mode,“我的 - 设置” - 深色模式入口点击量
+mpa_click_settings_entry_me,“我的 - 设置”入口点击量
+mpa_click_shortcut_remote_lock_unlock,车辆-锁止与解锁车辆点击量
+mpa_click_tile_alarms,车辆-功能-警报点击量
+mpa_click_userhomepage_station_card_bydefault,首页卡片充电站推荐卡片点击量
+mpa_click_autocharge_config_activate_consent,即插即充-开通pop-up操作-同意
+mpa_click_autocharge_config_toggle_clickon,即插即充-开通toggle点击-开启
+mpa_click_button_vehicle_overview_trip_data,车辆-概览-全部行程数据点击量
+mpa_click_charging_completed_benefit_switch,"""充电完成 - 手动关闭权益抵扣""点击"
+mpa_click_charging_connector_list_reservation,枪列表 - 预约点击量
+mpa_click_charging_dialog_stop_charging_retry,结束充电失败弹窗-重试点击量
+mpa_click_charging_filter_content,filter确认点击时的筛选项
+mpa_click_charging_map_station_card_bydefault,点击默认选中的推荐站点卡片
+mpa_click_charging_opercampaign_entry,充电运营活动入口点击事件
+mpa_click_charging_payment_comment_close,支付结果页评价弹出页面关闭点击事件
+mpa_click_charging_reservation,电站详情 -预约充电点击量
+mpa_click_charging_reservation_cancel,取消预约点击量
+mpa_click_charging_scanner_map,地图-扫码充电点击量
+mpa_click_charging_step_start_charging,启动充电点击量
+mpa_click_list_item_add_location_alarm,车辆-功能-警报-位置-添加警报点击量
+mpa_click_login_tc_disagree,服务协议弹窗 - 不同意点击量
+mpa_click_map_button_charingStation_navigation,地图-找车-目的地详情页-充电站卡片-导航点击量
+mpa_click_map_button_send_to_vehicle,地图-向车辆发送目的地点击量
+mpa_click_map_search_bar_on_map_favorites,地图-收藏-搜索目的地点击量
+mpa_click_mycoupon_detail_validtime,点击我的卡券-我的卡包，尊享充电权益页面-权益有效期查看
+mpa_click_service_orders_entry_order_category,我的订单-订单分类页-点击服务订单入口
+mpa_click_tdb_entry_service,预约试驾 - 服务tab入口点击量
+mpa_delete_profile,[App/PID Deletion] 删除账户入口点击量
+mpa_load_authentication_token_error,[MPA-Android] 认证token异常
+mpa_cashier_payment_backend_query_result,收银台-支付结果（后端参数返回）
+mpa_click_actionsheet_remote_lock,车辆-锁止与解锁车辆-锁止点击量
+mpa_click_autocharge_config_deactivate_consent,即插即充-开通toggle点击-关闭-确认关闭
+mpa_click_benefit_center_me_tab_entry,我的-我的权益-入口访问量
+mpa_click_bottomsheet_honk_and_flash_flash,地图-找车-点击喇叭和闪光入口-转向灯点击量
+mpa_click_charging_completed_bill_list,充电完成 - 查看更多充电费用账单点击量
+mpa_click_charging_reservation_confirm,“预约确认- 确认预约”的点击量
+mpa_click_charging_reservation_drop_lock,“ 预约成功 - 降锁充电”点击量
+mpa_click_charging_step_detect_connector_status,检测枪 - 检测枪状态页访问量
+mpa_click_charging_step_stop_charging_confirm,二次确认手动结束充电点击量
+mpa_click_map_dealer_card_navigation_button,经销商卡片上【导航到店】按钮的点击
+mpa_click_map_route_display_routesetting_button,服务-地图-路线展示页-路线设置
+mpa_click_my_appointment_tdb_tab,“我的 - 我的预约” - 预约试驾tab入口点击
+mpa_click_tile_charging,车辆-功能-充电点击量
+mpa_click_my_car_list_entry_me,”我的 - 我的车库“入口点击量
+mpa_click_my_order_psp_tab,“我的 - 我的订单” - 保养套餐tab点击量
+mpa_click_sab_add_to_calendar,“我的 - 我的预约” - 添加预约到日历功能使用量
+mpa_load_login_authentication_cancellation,[MPA]登录取消
+mpa_load_login_authentication_success,[MPA]登录成功
+mpa_load_logout_success,[MPA] 登出成功
+mpa_log_out_confirmation_profile,[App/Logout] 确认弹窗中退出登陆按钮点击
+mpa_log_out_profile,[App/Logout] 退出登陆点击量
+mpa_modify_avatar,[App/Profile] 头像编辑入口点击量
+mpa_screen_view_charging_completed,充电完成 - 充电完成访问量
+mpa_screen_view_charging_dialog_broken_appointment,“电站详情 - 失约弹窗”弹出量
+mpa_screen_view_charging_dialog_connector_connected,检测枪 - 插枪成功弹窗次数
+mpa_screen_view_charging_dialog_connector_disconnected,检测枪 - 未插枪 弹窗次数
+mpa_screen_view_charging_dialog_price,充电价格弹窗次数
+mpa_screen_view_charging_dialog_stop_charging_fail,充电中 - 充电结束失败次数
+mpa_screen_view_charging_map,“地图-充电地图”访问量
+mpa_screen_view_charging_map_station_card_bydefault,推荐站点默认选中浏览量
+mpa_screen_view_charging_order_detail_page,充电订单详情浏览
+mpa_screen_view_charging_payment_result,充电支付结果浏览量
+mpa_screen_view_charging_station_detail,电站详情访问量
+mpa_screen_view_charging_stationlist_success,充电站列表-页面浏览-成功加载
+mpa_screen_view_charging_step_charging,mpa_screen_view_charging_step_charging
+mpa_screen_view_charging_step_device_starting_up,设备启动中访问量
+mpa_screen_view_charging_step_drop_lock,降锁页访问量
+mpa_screen_view_chargingpackagesales_detailpage,充电运营活动详情页浏览事件
+mpa_screen_view_editable_address,MPA-地址管理功能访问量
+mpa_screen_view_login,登陆功能访问量
+mpa_screen_view_login_inapp_browser_overview,[MPA Android]打开网页登录
+mpa_screen_view_map_favorite,地图-收藏夹页面浏览量
+mpa_screen_view_mine_home,我的-页面浏览量
+mpa_screen_view_model_page_landing_page,MPA车型页面访问
+mpa_screen_view_my_appointments_page,我的预约-预约列表-页面曝光
+mpa_screen_view_my_card_and_coupon_my_card_tab,我的卡券-我的卡包-页面曝光
+mpa_screen_view_my_orders_category_page,我的订单-订单分类页-页面曝光
+mpa_screen_view_mycoupon_detail,我的卡券-我的卡包，尊享充电权益页面浏览
+mpa_screen_view_mycoupon_list,我的卡券-我的卡包，列表浏览
+mpa_screen_view_mysab,我的服务预约访问量
+mpa_screen_view_sab,服务预约访问量
+mpa_screen_view_servicehistory,我的保养历史访问量
+mpa_screen_view_vehicle_functions,车辆-详细信息-功能-页面浏览量
+mpa_screen_view_welfare_list,车主福利-福利列表页面浏览量
+omp_common_load,通用操作结果
+omp_common_log,通用日志上报
+mpa_load_sab_form_submission,服务预约 - 表单提交量
+mpa_log_out_cancel_profile,[App/Logout] 取消退出登陆点击量
+mpa_screen_view_mytdb,我的试驾预约访问量
+mpa_screen_view_userhomepage_station_card_bydefault,首页卡片充电站推荐卡片浏览量
+mpa_screen_view_charging_reservation_cancel,充电预约-取消单访问量
+mpa_screen_view_livechat,在线客服界面浏览量
+mpa_screen_view_psp,我的保养套餐访问量
+mpa_screen_view_scanner,扫码页访问量
+omp_common_performance,通用性能统计
+omp_create_order,创建订单
+omp_screen_duration,单屏停留时长
+omp_user_leads,用户留资
+omp_user_search,用户搜索
+omp_user_vehicle_browse,用户车辆浏览
+omp_payorder_success,支付成功

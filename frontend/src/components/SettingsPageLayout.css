@@ -1,0 +1,267 @@
+.settings-page-layout {
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--color-surface-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.settings-page-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.settings-page-header .back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-page-header .back-btn:hover {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+}
+
+.settings-page-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-page-header .title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #6366f1 100%);
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.settings-page-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.settings-page-header .header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.settings-page-content {
+  flex: 1;
+  padding: 24px 32px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ============ 通用卡片样式 ============ */
+.settings-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.settings-card .ant-card-head {
+  border-bottom: 1px solid var(--color-surface-border);
+  padding: 16px 20px;
+  min-height: auto;
+}
+
+.settings-card .ant-card-head-title {
+  color: var(--color-text-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.settings-card .ant-card-body {
+  padding: 20px;
+}
+
+/* ============ 统计卡片样式 ============ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-card .stat-label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card .stat-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.stat-card .stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.stat-card .stat-icon.blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.stat-card .stat-icon.green {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.stat-card .stat-icon.purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+}
+
+.stat-card .stat-icon.orange {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+/* ============ 内容网格布局 ============ */
+.content-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.content-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.content-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.content-grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .content-grid.cols-3,
+  .content-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-page-header {
+    padding: 12px 16px;
+  }
+  
+  .settings-page-content {
+    padding: 16px;
+  }
+  
+  .content-grid.cols-2,
+  .content-grid.cols-3,
+  .content-grid.cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============ 信息列表样式 ============ */
+.info-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.info-list-item:last-child {
+  border-bottom: none;
+}
+
+.info-list-item .info-label {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.info-list-item .info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* ============ 空状态样式 ============ */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: var(--color-text-muted);
+}
+
+.empty-state .ant-empty-image {
+  height: 80px;
+}
+
+.empty-state .ant-empty-description {
+  color: var(--color-text-muted);
+}
+
+

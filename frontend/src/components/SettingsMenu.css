@@ -1,0 +1,381 @@
+.settings-menu {
+  position: relative;
+}
+
+.settings-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  width: 100%;
+  text-align: left;
+}
+
+.settings-trigger:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.settings-trigger .user-nickname {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.settings-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  min-width: 200px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-fast);
+  z-index: 100;
+}
+
+.settings-menu:hover .settings-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.settings-item:first-child {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.settings-item:last-child {
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.settings-item:hover {
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--color-accent);
+}
+
+.settings-item .anticon {
+  font-size: 14px;
+}
+
+/* 用户信息区 */
+.user-info-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-details .user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.user-details .user-since {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* 分隔线 */
+.settings-divider {
+  height: 1px;
+  background: var(--color-surface-border);
+  margin: 4px 12px;
+}
+
+/* 退出登录 */
+.settings-item.logout-item {
+  color: #ff4d4f;
+}
+
+.settings-item.logout-item:hover {
+  background: rgba(255, 77, 79, 0.1);
+  color: #ff4d4f;
+}
+
+/* Modal 样式 */
+.settings-modal .ant-modal-content {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-surface-border);
+}
+
+.settings-modal .ant-modal-header {
+  background: transparent;
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.settings-modal .ant-modal-title {
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-modal .ant-modal-close {
+  color: var(--color-text-muted);
+}
+
+.settings-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.settings-modal .ant-form-item-label > label {
+  color: var(--color-text-secondary);
+}
+
+.settings-modal .ant-input,
+.settings-modal .ant-input-password {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-surface-border);
+  color: var(--color-text-primary);
+}
+
+.settings-modal .ant-input:hover,
+.settings-modal .ant-input-password:hover {
+  border-color: var(--color-accent);
+}
+
+.settings-modal .ant-input:focus,
+.settings-modal .ant-input-password:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.token-hint {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+/* 配置状态标签 */
+.config-status-tag {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 0 4px;
+  line-height: 16px;
+  height: 16px;
+}
+
+.config-status-tag .anticon {
+  font-size: 10px;
+}
+
+/* 模型配置弹窗 */
+.model-config-modal .ant-modal-content {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 12px;
+}
+
+.model-config-modal .ant-modal-header {
+  background: transparent;
+  border-bottom: 1px solid var(--color-surface-border);
+  padding: 16px 24px;
+}
+
+.model-config-modal .ant-modal-title {
+  color: var(--color-text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.model-config-modal .ant-modal-body {
+  padding: 20px 24px;
+}
+
+.current-config-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(82, 196, 26, 0.1) 0%, rgba(82, 196, 26, 0.05) 100%);
+  border: 1px solid rgba(82, 196, 26, 0.3);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.current-config-banner .banner-icon {
+  color: #52c41a;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.current-config-banner .banner-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.current-config-banner .banner-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.current-config-banner .banner-label {
+  color: var(--color-text-muted);
+}
+
+.current-config-banner .banner-divider {
+  color: var(--color-text-muted);
+  margin: 0 8px;
+}
+
+.current-config-banner strong {
+  color: var(--color-text-primary);
+}
+
+.current-config-banner .masked-key {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 12px;
+  color: var(--color-text-primary);
+}
+
+.model-config-form .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.model-config-form .ant-form-item-label > label {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.model-config-form .ant-select-selector,
+.model-config-form .ant-input,
+.model-config-form .ant-input-password {
+  background: var(--color-bg-tertiary) !important;
+  border-color: var(--color-surface-border) !important;
+  color: var(--color-text-primary) !important;
+  border-radius: 8px;
+}
+
+.model-config-form .ant-select-selector:hover,
+.model-config-form .ant-input:hover,
+.model-config-form .ant-input-password:hover {
+  border-color: var(--color-accent) !important;
+}
+
+.model-config-form .ant-select-focused .ant-select-selector,
+.model-config-form .ant-input:focus,
+.model-config-form .ant-input-password:focus,
+.model-config-form .ant-input-affix-wrapper:focus,
+.model-config-form .ant-input-affix-wrapper-focused {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 2px var(--color-accent-glow) !important;
+}
+
+.model-config-form .ant-select-dropdown {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 8px;
+}
+
+.model-config-form .ant-select-item {
+  color: var(--color-text-primary);
+}
+
+.model-config-form .ant-select-item-option-active,
+.model-config-form .ant-select-item-option-selected {
+  background: rgba(88, 166, 255, 0.15);
+}
+
+.model-config-form .ant-select-selection-item {
+  color: var(--color-text-primary);
+}
+
+.form-extra-hint {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.config-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(250, 173, 20, 0.1);
+  border: 1px solid rgba(250, 173, 20, 0.3);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+}
+
+.config-hint .anticon {
+  color: #faad14;
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.evaluate-content {
+  color: var(--color-text-primary);
+}
+
+.evaluate-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.evaluate-section p {
+  margin: 0 0 8px 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.evaluate-section ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.evaluate-section li {
+  margin-bottom: 4px;
+}
+
+.evaluate-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+

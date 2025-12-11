@@ -1,0 +1,240 @@
+.import-modal .ant-modal-content {
+  background: var(--color-surface);
+}
+
+.import-modal .ant-modal-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-surface-border);
+}
+
+.import-modal .ant-modal-title {
+  color: var(--color-text-primary);
+}
+
+.import-modal .ant-modal-footer {
+  border-top: 1px solid var(--color-surface-border);
+}
+
+.import-modal .import-steps {
+  margin-bottom: 24px;
+}
+
+.import-modal .ant-steps-item-title {
+  color: var(--color-text-secondary) !important;
+}
+
+.import-modal .ant-steps-item-finish .ant-steps-item-title {
+  color: var(--color-primary) !important;
+}
+
+.import-modal .ant-steps-item-process .ant-steps-item-title {
+  color: var(--color-text-primary) !important;
+}
+
+/* 上传区域 */
+.import-modal .step-content {
+  min-height: 300px;
+}
+
+.import-modal .ant-upload-drag {
+  background: var(--color-surface-elevated);
+  border: 2px dashed var(--color-surface-border);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s;
+}
+
+.import-modal .ant-upload-drag:hover {
+  border-color: var(--color-primary);
+}
+
+.import-modal .ant-upload-drag-icon {
+  color: var(--color-primary);
+}
+
+.import-modal .ant-upload-drag-icon .anticon {
+  font-size: 48px;
+}
+
+.import-modal .ant-upload-text {
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.import-modal .ant-upload-hint {
+  color: var(--color-text-muted);
+}
+
+.import-modal .upload-parsing {
+  padding: 40px;
+  text-align: center;
+}
+
+.import-modal .upload-parsing p {
+  margin-top: 16px;
+  color: var(--color-text-secondary);
+}
+
+/* 文件信息 */
+.import-modal .file-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--color-surface-elevated);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.import-modal .file-details {
+  flex: 1;
+}
+
+.import-modal .file-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.import-modal .file-meta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.import-modal .file-meta .separator {
+  margin: 0 8px;
+}
+
+/* 表单区域 */
+.import-modal .form-section {
+  margin-bottom: 20px;
+}
+
+.import-modal .form-section label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.import-modal .form-section .ant-input {
+  background: var(--color-surface);
+  border-color: var(--color-surface-border);
+  color: var(--color-text-primary);
+}
+
+.import-modal .form-section .ant-input:hover,
+.import-modal .form-section .ant-input:focus {
+  border-color: var(--color-primary);
+}
+
+/* Radio 样式 */
+.import-modal .ant-radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.import-modal .radio-label {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.import-modal .radio-desc {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* 预览表格 */
+.import-modal .preview-table-wrapper {
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-md);
+}
+
+.import-modal .preview-table-wrapper .ant-table {
+  background: transparent;
+}
+
+.import-modal .preview-table-wrapper .ant-table-thead > tr > th {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.import-modal .preview-table-wrapper .ant-table-tbody > tr > td {
+  color: var(--color-text-primary);
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.import-modal .column-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.import-modal .column-header .column-name {
+  font-weight: 600;
+}
+
+.import-modal .column-header .column-type {
+  font-size: 10px;
+  padding: 0 4px;
+  line-height: 16px;
+}
+
+.import-modal .null-value {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* 列类型信息 */
+.import-modal .column-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: var(--color-surface-elevated);
+  border-radius: var(--radius-md);
+}
+
+.import-modal .column-type-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-surface-border);
+}
+
+.import-modal .column-type-item .col-name {
+  font-size: 12px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.import-modal .column-type-item .ant-tag {
+  margin: 0;
+  font-size: 10px;
+  line-height: 16px;
+  padding: 0 4px;
+}
+
+
+
+
+
+
+
+
+

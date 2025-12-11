@@ -1,0 +1,62 @@
+.server-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  width: 100%;
+  text-align: left;
+}
+
+.server-status:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.server-status:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.server-status.running {
+  border-color: rgba(63, 185, 80, 0.3);
+}
+
+.server-status.running:hover {
+  background: rgba(63, 185, 80, 0.1);
+}
+
+.server-status.stopped {
+  border-color: rgba(248, 81, 73, 0.3);
+}
+
+.server-status.stopped:hover {
+  background: rgba(248, 81, 73, 0.1);
+}
+
+.status-icon {
+  font-size: 14px;
+}
+
+.status-icon.running {
+  color: var(--color-success);
+}
+
+.status-icon.stopped {
+  color: var(--color-error);
+}
+
+.status-icon.loading {
+  color: var(--color-accent);
+}
+
+.status-text {
+  white-space: nowrap;
+}
+
