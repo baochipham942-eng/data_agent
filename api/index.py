@@ -15,21 +15,33 @@ sys.path.insert(0, str(PROJECT_ROOT))
 try:
     from main import app
     
-    # Vercel 的 Python runtime 期望 WSGI 应用，但 FastAPI 是 ASGI
-    # 尝试使用 asgiref 将 ASGI 转换为 WSGI
-    try:
-        from asgiref.wsgi import WsgiToAsgi
-        # 将 ASGI 应用包装为 WSGI 兼容格式
-        handler = WsgiToAsgi(app)
-    except (ImportError, AttributeError):
-        # 如果转换失败，尝试直接导出（可能不工作）
-        # 或者使用 mangum（如果可用）
-        try:
-            from mangum import Mangum
-            handler = Mangum(app, lifespan="off")
-        except ImportError:
-            # 最后尝试直接导出
-            handler = app
+    # Vercel 的 Python runtime 需要将 ASGI 应用转换为兼容格式
+    # 使用 mangum 适配器（专为 AWS Lambda/Vercel 设计）
+    from mangum import Mangum
+    
+    # 创建 Mangum 适配器，禁用 lifespan 事件（Vercel 不支持）
+    handler = Mangum(app, lifespan="off")
+    
+except ImportError as import_error:
+    # 如果 mangum 导入失败，创建一个错误应用
+    from fastapi import FastAPI
+    from fastapi.responses import JSONResponse
+    
+    error_app = FastAPI(title="Import Error")
+    
+    @error_app.get("/{path:path}")
+    async def import_error_handler(path: str):
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": "Import Error",
+                "message": f"Failed to import mangum: {str(import_error)}",
+                "hint": "mangum package is required for Vercel deployment",
+                "path": path
+            }
+        )
+    
+    handler = error_app
         
 except Exception as e:
     # 如果导入失败，创建一个友好的错误应用

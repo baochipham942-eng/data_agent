@@ -2,7 +2,7 @@
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
 python-multipart>=0.0.6
-asgiref>=3.6.0
+mangum>=0.17.0
 
 # Vanna AI 相关
 vanna>=0.5.0
