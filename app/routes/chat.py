@@ -1476,9 +1476,9 @@ def create_chat_router() -> APIRouter:
                                     // 再次尝试从文本中提取 SQL（如果之前没找到）
                                     if (text && !extractedSql) {
                                         const sqlPatterns = [
-                                            /```sql\s*([\s\S]*?)```/i,
-                                            /```\s*(SELECT[\s\S]*?);?\s*```/i,
-                                            /(SELECT[\s\S]{20,}?);/i,
+                                            /```sql\\s*([\\s\\S]*?)```/i,
+                                            /```\\s*(SELECT[\\s\\S]*?);?\\s*```/i,
+                                            /(SELECT[\\s\\S]{20,}?);/i,
                                             // 匹配没有代码块的 SELECT 语句（至少包含 FROM）
                                             /(SELECT\\s+[\\s\\S]{{20,}}?FROM[\\s\\S]{{5,}}?)(?:;|$|\\n)/i,
                                         ];
@@ -1876,9 +1876,9 @@ def create_chat_router() -> APIRouter:
             if (!text) return null;
             
             const sqlPatterns = [
-                /```sql\s*([\s\S]*?)```/i,
-                /```\s*(SELECT[\s\S]*?);?\s*```/i,
-                /(SELECT[\s\S]{20,}?);/i,
+                /```sql\\s*([\\s\\S]*?)```/i,
+                /```\\s*(SELECT[\\s\\S]*?);?\\s*```/i,
+                /(SELECT[\\s\\S]{20,}?);/i,
                 // 匹配没有代码块的 SELECT 语句（至少包含 FROM）
                 /(SELECT\\s+[\\s\\S]{20,}?FROM[\\s\\S]{5,}?)(?:;|$|\\n)/i,
             ];
