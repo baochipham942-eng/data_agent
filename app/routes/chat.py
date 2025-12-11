@@ -1530,7 +1530,7 @@ def create_chat_router() -> APIRouter:
                                         // 过滤掉 CSV 数据行和技术性信息
                                         const shouldExclude = 
                                             // CSV 表头或数据行（包含多个逗号且主要是数据）
-                                            (textTrimmed.includes(',') && textTrimmed.split(',').length >= 3 && /^[\d\s,\-:\.\$]+$/.test(textTrimmed)) ||
+                                            (textTrimmed.includes(',') && textTrimmed.split(',').length >= 3 && /^[\\d\\s,\\-:\\.\\$]+$/.test(textTrimmed)) ||
                                             // 技术性提示信息
                                             textTrimmed.includes('Results saved to file:') ||
                                             textTrimmed.includes('**IMPORTANT: FOR VISUALIZE_DATA') ||
@@ -1546,12 +1546,12 @@ def create_chat_router() -> APIRouter:
                                             textTrimmed.includes('Created visualization from') ||
                                             textTrimmed.includes('Tool limit reached') ||
                                             // 纯数据行（只有数字、逗号、时间戳等）
-                                            /^[\d\s,\-:\.]+$/.test(textTrimmed) ||
+                                            /^[\\d\\s,\\-:\\.]+$/.test(textTrimmed) ||
                                             // 过滤技术描述短句
                                             (textTrimmed.length < 100 && (
-                                                /表\s*[名]?\s*[为是]/.test(textTrimmed) ||
-                                                /字段\s*[名为]/.test(textTrimmed) ||
-                                                /列\s*[名为]/.test(textTrimmed) ||
+                                                /表\\s*[名]?\\s*[为是]/.test(textTrimmed) ||
+                                                /字段\\s*[名为]/.test(textTrimmed) ||
+                                                /列\\s*[名为]/.test(textTrimmed) ||
                                                 /包含\s*\d+\s*[行列]/.test(textTrimmed) ||
                                                 /结构\s*[如下]/.test(textTrimmed)
                                             ));
