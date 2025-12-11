@@ -1369,11 +1369,11 @@ def create_chat_router() -> APIRouter:
                             if (!sql && assistantText) {
                                 // 如果原始文本中没有找到，尝试从清理后的文本中提取
                                 // 移除重复的空格和换行
-                                cleanedText = cleanedText.replace(/\s+/g, ' ').trim();
+                                cleanedText = cleanedText.replace(/\\s+/g, ' ').trim();
                                 sql = extractSQLFromText(cleanedText);
                             } else {
                                 // 如果已经找到 SQL，仍然清理文本用于显示
-                                cleanedText = cleanedText.replace(/\s+/g, ' ').trim();
+                                cleanedText = cleanedText.replace(/\\s+/g, ' ').trim();
                             }
                             
                             // SQL 提取完成（移除调试日志以减少控制台输出）
@@ -1487,7 +1487,7 @@ def create_chat_router() -> APIRouter:
                                             if (match && match[1]) {
                                                 let sql = match[1].trim();
                                                 // 清理 SQL：移除可能的代码块标记
-                                                sql = sql.replace(/^```sql\s*/i, '').replace(/```\s*$/i, '').trim();
+                                                sql = sql.replace(/^```sql\\s*/i, '').replace(/```\\s*$/i, '').trim();
                                                 if (sql.toUpperCase().startsWith('SELECT') && sql.length > 20) {
                                                     extractedSql = sql;
                                                     break;
@@ -1815,11 +1815,11 @@ def create_chat_router() -> APIRouter:
                 // 过滤掉 CSV 表头或数据行
                 if (trimmed.includes(',') && trimmed.split(',').length >= 3) {
                     // 如果主要是数字、时间戳、逗号，很可能是数据行
-                    if (/^[\d\s,\-:\.]+$/.test(trimmed)) {
+                    if (/^[\\d\\s,\\-:\\.]+$/.test(trimmed)) {
                         return false;
                     }
                     // 如果包含时间戳格式，也很可能是数据行
-                    if (/\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}/.test(trimmed)) {
+                    if (/\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}/.test(trimmed)) {
                         return false;
                     }
                 }
@@ -1840,10 +1840,10 @@ def create_chat_router() -> APIRouter:
                         // 再次验证：如果步骤文本看起来像数据行，跳过
                         if (stepText.length > 0) {
                             // 检查是否包含时间戳格式
-                            const hasTimestamp = /\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}/.test(stepText);
+                            const hasTimestamp = /\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}/.test(stepText);
                             // 检查是否是纯数据行
                             const isDataLine = stepText.includes(',') && stepText.split(',').length >= 3 && 
-                                             /^[\d\s,\-:\.]+$/.test(stepText);
+                                             /^[\\d\\s,\\-:\\.]+$/.test(stepText);
                             
                             if (!hasTimestamp && !isDataLine && stepText.length > 5) {
                                 steps.push({
@@ -1888,7 +1888,7 @@ def create_chat_router() -> APIRouter:
                 if (match && match[1]) {
                     let sql = match[1].trim();
                     // 清理 SQL：移除可能的代码块标记
-                    sql = sql.replace(/^```sql\s*/i, '').replace(/```\s*$/i, '').trim();
+                    sql = sql.replace(/^```sql\\s*/i, '').replace(/```\\s*$/i, '').trim();
                     if (sql.toUpperCase().startsWith('SELECT') && sql.length > 20) {
                         return sql;
                     }
