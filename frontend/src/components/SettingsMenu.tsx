@@ -15,6 +15,7 @@ import {
 } from '@ant-design/icons';
 import { clearUserInfo, type UserInfo } from './LoginModal';
 import './SettingsMenu.css';
+import catalog from '../model-catalog.json';
 
 interface SettingsMenuProps {
   onOpenEvaluate?: () => void;
@@ -27,37 +28,33 @@ interface SettingsMenuProps {
   onLogout?: () => void;
 }
 
-// 支持的模型配置
+/**
+ * 支持的模型配置
+ * 数据来源: ~/Downloads/ai/model-catalog.json（中央模型目录）
+ * 更新模型后运行 ~/Downloads/ai/sync-models.sh 同步
+ */
+const CATALOG_PROVIDER_MAP: Record<string, string> = { claude: 'anthropic' };
+const CATALOG_NAME_OVERRIDE: Record<string, string> = { claude: 'Claude (Anthropic)' };
+const CATALOG_PROVIDERS = ['deepseek', 'openai', 'claude'];
+
+const catalogPresets = catalog.providers
+  .filter((p) => CATALOG_PROVIDERS.includes(p.id))
+  .map((p) => ({
+    key: CATALOG_PROVIDER_MAP[p.id] || p.id,
+    name: CATALOG_NAME_OVERRIDE[p.id] || p.name,
+    models: p.models.map((m) => m.id),
+    defaultModel: p.default,
+    defaultBaseUrl: p.apiUrl,
+    placeholder: p.apiKeyHint || 'API Key',
+  }));
+
 const MODEL_PRESETS = [
-  {
-    key: 'deepseek',
-    name: 'DeepSeek',
-    models: ['deepseek-chat', 'deepseek-coder', 'deepseek-reasoner'],
-    defaultModel: 'deepseek-chat',
-    defaultBaseUrl: 'https://api.deepseek.com',
-    placeholder: 'sk-xxxxxxxxxxxxxxxxxxxxxxxx',
-  },
-  {
-    key: 'openai',
-    name: 'OpenAI',
-    models: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-3.5-turbo', 'o1', 'o1-mini', 'o1-pro'],
-    defaultModel: 'gpt-4o',
-    defaultBaseUrl: 'https://api.openai.com/v1',
-    placeholder: 'sk-xxxxxxxxxxxxxxxxxxxxxxxx',
-  },
-  {
-    key: 'anthropic',
-    name: 'Claude (Anthropic)',
-    models: ['claude-sonnet-4-20250514', 'claude-3-5-sonnet-20241022', 'claude-3-5-haiku-20241022', 'claude-3-opus-20240229'],
-    defaultModel: 'claude-sonnet-4-20250514',
-    defaultBaseUrl: 'https://api.anthropic.com',
-    placeholder: 'sk-ant-xxxxxxxxxxxxxxxxxxxxxxxx',
-  },
+  ...catalogPresets,
   {
     key: 'azure',
     name: 'Azure OpenAI',
-    models: ['gpt-4o', 'gpt-4', 'gpt-35-turbo'],
-    defaultModel: 'gpt-4o',
+    models: catalog.providers.find((p) => p.id === 'openai')?.models.slice(0, 3).map((m) => m.id) || [],
+    defaultModel: catalog.providers.find((p) => p.id === 'openai')?.default || 'gpt-5.4',
     defaultBaseUrl: 'https://your-resource.openai.azure.com',
     placeholder: 'xxxxxxxxxxxxxxxxxxxxxxxx',
   },
